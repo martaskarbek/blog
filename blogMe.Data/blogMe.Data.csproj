@@ -5,9 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="DAL" />
       <Folder Include="DTO" />
-      <Folder Include="Repository" />
     </ItemGroup>
 
     <ItemGroup>
