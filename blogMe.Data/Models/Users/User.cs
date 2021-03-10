@@ -6,10 +6,10 @@ namespace blogMe.Data.Models.Users
 {
     public abstract class User
     {
-        [Key]
+        /*[Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column(TypeName = "VARCHAR(30)")]
-        public Guid Id { get; set; }
+        public Guid Id { get; set; }*/
         [Column(TypeName = "VARCHAR(50)")]
         [Required, StringLength(50)]
         public string Name { get; set; }
@@ -18,7 +18,7 @@ namespace blogMe.Data.Models.Users
         public string Password { get; set; }
         [Column(TypeName = "VARCHAR(50)")]
         [Required, StringLength(50)]
-        public string Email { get; set; }
+        /*public string Email { get; set; }*/
         public Role Role { get; set; }
         [Column(TypeName = "VARCHAR(200)")]
         public string InstagramLink { get; set; }

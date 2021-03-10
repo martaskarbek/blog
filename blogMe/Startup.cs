@@ -13,7 +13,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace blogMe
 {
-    public class Startup
+    public class  Startup
     {
         public Startup(IConfiguration configuration)
         {
@@ -45,7 +45,8 @@ namespace blogMe
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
+            
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

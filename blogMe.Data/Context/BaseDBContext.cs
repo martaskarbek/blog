@@ -3,11 +3,13 @@ using blogMe.Data.Models.Comments;
 using blogMe.Data.Models.Entries;
 using blogMe.Data.Models.Hashtags;
 using blogMe.Data.Models.Users;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace blogMe.Data.Context
 {
-    public class BaseDBContext : DbContext
+    public class BaseDBContext : IdentityDbContext<IdentityUser>
     {
         private readonly string _connectionString;
 
