@@ -25,8 +25,8 @@ namespace blogMe
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<BaseDBContext>(opt =>
-                opt.UseSqlServer(Configuration["ConnectionString"]));
+            services.AddDbContext<BaseDBContext>(options => options.UseSqlite(Configuration.GetConnectionString("BlogMe"), 
+                b => b.MigrationsAssembly("blogMe")));
         }
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -43,6 +43,7 @@ namespace blogMe
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            //app.UseSession();
 
             app.UseRouting();
             app.UseAuthentication();
